@@ -1,0 +1,4 @@
+AuthType Basic  
+AuthName "restricted area"  
+AuthUserFile /homez.565/raltp/.htpasswd  
+require valid-user

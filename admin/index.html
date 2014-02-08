@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Alt.metro Admin</title>
+        <meta charset="utf-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/style.css" rel="stylesheet" media="screen">
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            <header>
+                <h1><a href="#">Alt.metro admin</a></h1>
+            </header>
+
+            <h2>Gestion des lignes</h2>
+            <div class="row-fluid">
+                <div class="span4">
+                    <span>Liste des lignes existantes :</span>
+                    <ul id="liste_lignes" class="nav nav-tabs nav-stacked">
+                        <!-- populated on load -->
+                    </ul>
+                    <a href="#/add/ligne" class="btn btn-primary add">
+                        <i class="icon-plus-sign icon-white"></i>&nbsp;Ajouter une ligne
+                    </a>
+                </div>
+                <div class="span8" id="edit_ligne"></div>
+            </div>
+            
+            <h2>Gestion des stations</h2>
+            <div class="row-fluid">
+                <div class="span4">
+                    <label>Chercher une station pour la modifier ou l'ajouter à une ligne</label>
+                    <input type="text" data-provide="type-ahead" class="typeahead" autocomplete="off" />
+                </div>
+                <div class="span8">
+                    <div id="edit_station"></div>
+                </div>
+            </div>            
+            
+            <h2>Liens annexes</h2>
+            <div class="row-fluid">
+                <ul>
+                    <li><a target="_blank" href="/">Aller voir la carte</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TEMPLATES -->
+        <script type="text/template" id="station_template">
+            <label>Nom</label><input type="text" name="nom" value="<%= nom %>" />
+            <label>Lien wikipedia</label><input type="text" name="wikipedia" value="<%= wikipedia %>" />
+            <label>Description</label>
+            <textarea name="description"><%= description %></textarea>
+            <br />
+            <button class="btn btn-primary edit" type="button">
+                <i class="icon-ok icon-white"></i>&nbsp;Mettre à jour
+            </button>
+            <button class="btn btn-primary addtoligne" type="button" disabled="disabled">
+                <i class="icon-plus-sign icon-white"></i>&nbspAjouter à la ligne en cours
+            </button>
+        </script>
+
+        <script type="text/template" id="ligne_template">
+            <div class="span4">
+                <label>Nom </label><input type="text" name="nom" value="<%= nom %>" />
+                <label>Description </label>
+                <textarea name="description"><%= description %></textarea>
+                <label>Numero </label><input type="text" name="numero" value="<%= numero %>" />
+                <label>Couleur </label><input id="colorPicker" type="text" name="couleur" value="<%= couleur %>" />
+                <label>Visibilité (1 ou laisser vide pour invisible) </label><input type="text" name="visible" value="<%= visible %>" />
+                <br />
+                <button class="btn btn-primary edit" type="button">
+                    <i class="icon-ok icon-white"></i>&nbsp;Mettre à jour
+                </button>
+                <button class="btn btn-primary delete" type="button">
+                    <i class="icon-trash icon-white"></i>&nbsp;Effacer
+                </button>
+            </div>
+            <div class="span8">
+                <span>Tracé de la ligne</span>
+                <br />
+                <em>Cliquez sur un item pour le supprimer de la liste...</em>
+                <br /><br />
+                <ul id="traceLigne" class="nav nav-tabs nav-stacked"></ul>
+            </div>
+
+        </script>
+
+        <!-- scripts -->
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+        <script src="js/vendor/underscore-min.js"></script>
+        <script src="js/vendor/backbone-min.js"></script>
+        <script src="js/vendor/bootstrap.js"></script>
+        <script src="js/vendor/jscolor/jscolor.js"></script>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>

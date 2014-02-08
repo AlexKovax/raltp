@@ -1,0 +1,198 @@
+/*
+    Document   : main
+    Created on : 25 avr. 2013, 16:54:25
+    Author     : Alex
+    Description:
+        Main stylesheet
+*/
+
+html,body { width: 100%; height: 100%; margin: 0px; padding: 0px; }
+
+body{
+    color: #000;
+    font-family: 'allerregular';
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+div.spacer{
+    clear: both;
+    height: 0;
+}
+
+nav#lignes {
+    height: 100%;
+    width: 25%;
+    float: right;
+}
+
+div#map{
+    height: 100%;
+    width: 75%;
+    float: left;
+}
+
+/* NAV / listes des lignes */
+nav#lignes ul#listLignes{
+    padding: 0;
+    margin: 20px 0;
+    width: 100%;
+    list-style-type: none;
+}
+
+nav#lignes ul#listLignes li{
+    height: auto;
+    display: block;
+}
+
+nav#lignes ul#listLignes li a{
+    display: block;
+    width: 66.66666666666666%; /* 200 / 300 */
+    float: left;
+    padding: 0 8.333333333333333%; /* 25 / 300 */
+    margin-bottom: 20px;
+    font-family: 'allerbold';
+}
+
+nav#lignes ul#listLignes li svg{
+    height: 30px;
+    width: 10%; /* 30 / 300 */
+    float: right;
+    margin-right: 6.666666666666667%; /* 20 / 300 */
+    margin-top: 15px;
+}
+
+nav#lignes ul#listLignes li svg text{
+    text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 16px; line-height: normal;
+    font-family: 'allerbold';
+}
+
+nav#lignes ul#listLignes li ul{
+    display: none;
+    margin: 0 0 20px 0;
+    background-color: #F2F2F2;
+    padding: 0 0 20px 0;
+}
+
+nav#lignes ul#listLignes li ul li{
+    display: block;
+    padding: 0 8.333333333333333%; /* 25 / 300 */
+    line-height: 24px;
+}
+
+nav#lignes ul#listLignes li ul li.title{
+    background-color: #E6E6E6;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/*******************/
+/* leaflet custom */
+body .leaflet-popup-content-wrapper{
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+body div.leaflet-popup-content svg{
+    height: 30px;
+    width: 30px;
+    float: right;
+    margin-right: 0px;
+    margin-top: 15px;
+}
+body div.leaflet-popup-content svg text{
+    text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 16px; line-height: normal;
+    font-family: 'allerbold';
+}
+
+body div.leaflet-popup-content h2{
+    float: left;
+    font-family: 'allerbold';
+    font-weight: normal;
+}
+
+body div.leaflet-popup-content div.navStation{
+    margin-top: 20px;
+}
+
+body div.leaflet-popup-content div.navStation a{
+    display: block;
+    float: left;
+    width: 50%;
+}
+body div.leaflet-popup-content div.navStation a.right{
+    text-align: right;
+}
+body div.leaflet-popup-content div.navStation a.right.full{
+    width: 100%;
+}
+
+/***********/
+/* header */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 80px;
+    height: 170px;
+    width: 160px;
+    z-index: 9000;
+    background: #fff;
+    text-align: center;
+}
+
+header div.title{
+    width: 100%;
+    border-top: solid 12px #5DBFC3;
+    color: #5DBFC3;
+    font-size: 50px;
+    padding-top: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+}
+
+header div.subtitle{
+    font-size: 16px;
+    font-family: 'allerbold';
+}
+
+header div.share, header div.contact{
+    font-size: 12px;
+    font-family: 'allerbold';    
+    display: none;
+    padding: 0 10px;
+}
+
+header div.subtitle a{
+    color: #5DBFC3;
+}
+header div.subtitle.intro a{
+    color: #000;
+}
+
+nav#about {
+    position: absolute;
+    top: 180px;
+    left: 80px; 
+    z-index: 9000;
+    text-align: center;
+    width: 160px;
+}
+
+nav#about ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav#about ul li{
+    display: inline-block;
+    width: 42px;
+    cursor: pointer;
+}
